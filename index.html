@@ -42,6 +42,7 @@
     .btn:hover { transform: translateY(-2px); border-color: var(--blue); }
     .btn.primary { background: linear-gradient(135deg, #67a8ff, #65e0d2); color: #07111e; border: 0; }
     .profile-card { background: linear-gradient(145deg, rgba(103,168,255,.15), rgba(101,224,210,.05)); border: 1px solid var(--border); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }
+    .profile-photo { width: 112px; height: 112px; object-fit: cover; object-position: center 28%; border-radius: 24px; border: 2px solid rgba(101,224,210,.55); margin-bottom: 24px; box-shadow: 0 8px 25px rgba(0,0,0,.25); }
     .monogram { width: 82px; height: 82px; border-radius: 24px; display: grid; place-items: center; font-size: 1.8rem; font-weight: 900; color: #07111e; background: linear-gradient(135deg, var(--blue), var(--cyan)); margin-bottom: 24px; }
     .profile-card h2 { margin: 0 0 4px; font-size: 1.35rem; }
     .profile-card p { margin: 0; font-size: .95rem; }
@@ -110,10 +111,11 @@
         </div>
       </div>
       <aside class="profile-card">
-        <div class="monogram" aria-hidden="true">AA</div>
+        <img class="profile-photo" src="profile-photo.jpeg" alt="Professional portrait of Abdullah Amin">
         <h2>Abdullah Amin</h2>
         <p>Computer Science · Data Science</p>
         <div class="mini-stat"><span>Based in</span><strong>Islamabad, Pakistan</strong></div>
+        <div class="mini-stat"><span>Phone</span><strong><a href="tel:+923188108190">03188108190</a></strong></div>
         <div class="mini-stat"><span>Focus</span><strong>Data & AI</strong></div>
         <div class="mini-stat"><span>Education</span><strong>BS Computer Science</strong></div>
       </aside>
@@ -206,7 +208,6 @@
         <div class="section-head"><span class="eyebrow">Education</span><h2 class="section-title">Academic background</h2></div>
         <div class="grid">
           <article class="card"><div class="meta">2022 – 2026</div><h3>BS Computer Science — Specialization in Data Science</h3><p>University of Engineering and Technology (UET), Mardan</p></article>
-          <article class="card"><div class="meta">2020 – 2022</div><h3>Intermediate (ICS)</h3><p>GSUHHSS No. 1, Charsadda</p></article>
         </div>
       </div>
     </section>
@@ -214,7 +215,7 @@
     <section id="contact">
       <div class="container">
         <div class="contact-box">
-          <div><span class="eyebrow">Let's connect</span><h2 class="section-title">Have a project or opportunity?</h2><p>I'm open to connecting about data science, analytics, and technology opportunities.</p><p><a class="text-link" href="mailto:abdullahaminkpk315@gmail.com">abdullahaminkpk315@gmail.com</a> · Islamabad, Pakistan</p></div>
+          <div><span class="eyebrow">Let's connect</span><h2 class="section-title">Have a project or opportunity?</h2><p>I'm open to connecting about data science, analytics, and technology opportunities.</p><p><a class="text-link" href="mailto:abdullahaminkpk315@gmail.com">abdullahaminkpk315@gmail.com</a> · <a class="text-link" href="tel:+923188108190">03188108190</a> · Islamabad, Pakistan</p></div>
           <div class="actions">
             <!-- Replace the placeholder URLs with your own profiles. -->
             <a class="btn primary" href="mailto:abdullahaminkpk315@gmail.com">Email me</a>
