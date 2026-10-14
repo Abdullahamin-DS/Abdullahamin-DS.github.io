@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abdullah Amin — Computer Science graduate specializing in Data Science, machine learning, and analytics.">
+  <title>Abdullah Amin | Data Science Portfolio</title>
+  <style>
+    :root {
+      --bg: #080d18;
+      --panel: #101827;
+      --panel-2: #141f31;
+      --text: #edf3ff;
+      --muted: #a7b4ca;
+      --blue: #67a8ff;
+      --cyan: #65e0d2;
+      --border: rgba(173, 195, 230, .16);
+      --shadow: 0 18px 55px rgba(0,0,0,.25);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: radial-gradient(ellipse at top right, #142747 0, var(--bg) 42%);
+      color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(8,13,24,.82); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.12rem; }
+    .brand span { color: var(--cyan); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 22px; color: var(--muted); font-size: .92rem; }
+    .nav-links a:hover, .text-link:hover { color: var(--cyan); }
+    .hero { padding: 95px 0 76px; display: grid; grid-template-columns: 1.45fr .8fr; align-items: center; gap: 50px; }
+    .eyebrow { color: var(--cyan); font-size: .82rem; text-transform: uppercase; letter-spacing: .16em; font-weight: 800; }
+    h1 { font-size: clamp(2.8rem, 7vw, 5rem); line-height: 1.03; letter-spacing: -.065em; margin: 15px 0 20px; }
+    h1 span { color: var(--blue); }
+    .hero p { color: var(--muted); max-width: 650px; font-size: 1.08rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; padding: 12px 18px; border-radius: 12px; font-weight: 750; border: 1px solid var(--border); transition: transform .2s, border-color .2s; }
+    .btn:hover { transform: translateY(-2px); border-color: var(--blue); }
+    .btn.primary { background: linear-gradient(135deg, #67a8ff, #65e0d2); color: #07111e; border: 0; }
+    .profile-card { background: linear-gradient(145deg, rgba(103,168,255,.15), rgba(101,224,210,.05)); border: 1px solid var(--border); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }
+    .monogram { width: 82px; height: 82px; border-radius: 24px; display: grid; place-items: center; font-size: 1.8rem; font-weight: 900; color: #07111e; background: linear-gradient(135deg, var(--blue), var(--cyan)); margin-bottom: 24px; }
+    .profile-card h2 { margin: 0 0 4px; font-size: 1.35rem; }
+    .profile-card p { margin: 0; font-size: .95rem; }
+    .mini-stat { display: flex; justify-content: space-between; gap: 15px; padding-top: 15px; margin-top: 15px; border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; }
+    section { padding: 65px 0; }
+    .section-head { margin-bottom: 28px; }
+    .section-head .eyebrow { margin-bottom: 8px; display: block; }
+    h2.section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.045em; margin: 0; }
+    .section-intro { color: var(--muted); max-width: 720px; margin: 10px 0 0; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; }
+    .card { background: rgba(16,24,39,.86); border: 1px solid var(--border); border-radius: 18px; padding: 24px; box-shadow: var(--shadow); }
+    .card h3 { margin: 0 0 8px; font-size: 1.16rem; }
+    .card p { color: var(--muted); margin: 8px 0; }
+    .meta { color: var(--cyan); font-size: .83rem; font-weight: 750; margin-bottom: 9px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag { background: rgba(103,168,255,.1); border: 1px solid rgba(103,168,255,.2); color: #c6dcff; padding: 5px 10px; border-radius: 999px; font-size: .8rem; }
+    ul.clean { color: var(--muted); padding-left: 20px; margin: 12px 0 0; }
+    ul.clean li { margin: 7px 0; }
+    .skill-group { margin-bottom: 18px; }
+    .skill-group strong { display: block; margin-bottom: 10px; }
+    .skill-group .tags { margin-top: 0; }
+    .timeline { display: grid; gap: 16px; }
+    .timeline .card { position: relative; }
+    .contact-box { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; background: linear-gradient(120deg, rgba(103,168,255,.14), rgba(101,224,210,.08)); border: 1px solid var(--border); border-radius: 22px; padding: 30px; }
+    .contact-box p { color: var(--muted); margin-bottom: 0; }
+    .text-link { color: var(--blue); overflow-wrap: anywhere; }
+    footer { border-top: 1px solid var(--border); padding: 25px 0; color: var(--muted); font-size: .88rem; }
+    .note { color: #8d9bb2; font-size: .86rem; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding-top: 65px; gap: 28px; }
+      .grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 12px; font-size: .82rem; justify-content: flex-end; }
+      .brand { white-space: nowrap; }
+      nav { align-items: flex-start; padding: 17px 0; }
+    }
+    @media (max-width: 480px) {
+      .container { width: min(100% - 28px, 1100px); }
+      nav { flex-direction: column; gap: 12px; }
+      .nav-links { justify-content: flex-start; }
+      .hero { padding-top: 48px; }
+      .card, .profile-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a class="brand" href="#home">Abdullah<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container hero" id="home">
+      <div>
+        <div class="eyebrow">Data Science · Machine Learning · Analytics</div>
+        <h1>Hi, I'm <span>Abdullah Amin.</span></h1>
+        <p>Computer Science graduate specializing in Data Science, interested in using data, machine learning, and visualization to solve practical problems. My experience includes data preparation, exploratory analysis, model development, database work, and interactive dashboards.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore my projects ↓</a>
+          <a class="btn" href="#contact">Get in touch</a>
+          <!-- Add your CV PDF to this folder and name it Abdullah-Amin-CV.pdf to enable this link. -->
+          <a class="btn" href="Abdullah-Amin-CV.pdf" download>Download CV</a>
+        </div>
+      </div>
+      <aside class="profile-card">
+        <div class="monogram" aria-hidden="true">AA</div>
+        <h2>Abdullah Amin</h2>
+        <p>Computer Science · Data Science</p>
+        <div class="mini-stat"><span>Based in</span><strong>Islamabad, Pakistan</strong></div>
+        <div class="mini-stat"><span>Focus</span><strong>Data & AI</strong></div>
+        <div class="mini-stat"><span>Education</span><strong>BS Computer Science</strong></div>
+      </aside>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">A little about me</span><h2 class="section-title">Turning data into useful insights.</h2>
+          <p class="section-intro">I completed a BS in Computer Science with a specialization in Data Science at the University of Engineering and Technology, Mardan. I enjoy learning through hands-on projects and working across the data workflow—from collecting and cleaning data to analysis, modeling, and communicating results.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><h3>What I work with</h3><p>Python, databases, data preprocessing, machine learning workflows, and visualization tools including Power BI and Tableau.</p></article>
+          <article class="card"><h3>What I'm building toward</h3><p>Growing my practical skills in data science and AI while contributing to useful, well-documented projects and data-driven solutions.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Professional journey</span><h2 class="section-title">Experience</h2></div>
+        <div class="timeline">
+          <article class="card">
+            <div class="meta">August 2026 – Present · Islamabad</div><h3>Data Center Intern — National Telecommunication Corporation (NTC)</h3>
+            <ul class="clean"><li>Undertaking hands-on training and assigned project tasks in a national telecommunications data center environment.</li><li>Gaining exposure to enterprise IT infrastructure and data center operations.</li></ul>
+          </article>
+          <article class="card">
+            <div class="meta">March 2026 – June 2026 · Islamabad</div><h3>Data Science & AI/ML Intern — Cognisons</h3>
+            <ul class="clean"><li>Collected, cleaned, and preprocessed structured and unstructured datasets; performed exploratory data analysis and feature engineering.</li><li>Worked with Python to develop, train, and evaluate machine learning models.</li><li>Worked with PostgreSQL and MongoDB and supported data processing and software development tasks using Docker and AWS.</li></ul>
+          </article>
+          <article class="card">
+            <div class="meta">January 2026 – February 2026</div><h3>Intern — Center of Artificial Intelligence (CAI)</h3>
+            <ul class="clean"><li>Contributed to the Water Quality Management System project through Python programming, data collection, and data annotation.</li><li>Supported physical and microbiological water quality experimentation for custom dataset collection.</li><li>Collaborated with the AI team and developed communication and problem-solving skills.</li></ul>
+          </article>
+          <article class="card">
+            <div class="meta">2022 – 2025</div><h3>Coordinator — University Activities</h3>
+            <ul class="clean"><li>Organized and coordinated university events, including logistics, budgeting, and team collaboration.</li><li>Built leadership, communication, and time-management skills through event execution.</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Selected work</span><h2 class="section-title">Projects</h2>
+          <p class="section-intro">These projects are based on the experience described in my CV. Add repository links, screenshots, and verified results as you prepare each project for public viewing.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="meta">FINAL YEAR PROJECT · DATA SCIENCE</div>
+            <h3>Heart Disease Risk Analysis & Prediction</h3>
+            <p>Analyzed cardiovascular risk factors using national and hospital datasets and developed machine learning models to explore heart disease risk and prevention strategies.</p>
+            <ul class="clean"><li>Data analysis and preprocessing</li><li>Machine learning model development</li><li>Interactive Streamlit dashboard for risk visualization</li></ul>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Machine Learning</span><span class="tag">Streamlit</span><span class="tag">Data Visualization</span></div>
+            <!-- Replace # with your real GitHub repository or live demo URL. -->
+            <p><a class="text-link" href="#contact">Add project repository or demo →</a></p>
+          </article>
+          <article class="card">
+            <div class="meta">AI / DATA COLLECTION</div>
+            <h3>Water Quality Management System</h3>
+            <p>Contributed to a water quality project through Python programming, data collection, annotation, and physical and microbiological experimentation to build a custom dataset.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Data Collection</span><span class="tag">Data Annotation</span><span class="tag">AI</span></div>
+            <p class="note">Publish only material you are permitted to share from your internship.</p>
+          </article>
+          <article class="card">
+            <div class="meta">DATA ANALYTICS · OPTIONAL ADDITION</div>
+            <h3>Data Analysis & Visualization</h3>
+            <p>Use this card for a separate analysis project once you have one ready. Include the question, dataset source, cleaning steps, key charts, and what you learned.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Power BI</span><span class="tag">Tableau</span></div>
+            <p class="note">Replace this example card with a completed project before presenting it as finished work.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Tools & capabilities</span><h2 class="section-title">Technical skills</h2></div>
+        <div class="card">
+          <div class="skill-group"><strong>Programming</strong><div class="tags"><span class="tag">Python</span><span class="tag">C</span><span class="tag">C++</span></div></div>
+          <div class="skill-group"><strong>Data science & analytics</strong><div class="tags"><span class="tag">Data Preprocessing</span><span class="tag">Data Cleaning</span><span class="tag">Data Annotation</span><span class="tag">Data Mining (Weka)</span><span class="tag">Model Training</span><span class="tag">Data Analysis</span></div></div>
+          <div class="skill-group"><strong>Databases & platforms</strong><div class="tags"><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">AWS</span></div></div>
+          <div class="skill-group"><strong>Visualization & business intelligence</strong><div class="tags"><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Excel</span><span class="tag">Orange</span><span class="tag">Data Warehousing</span><span class="tag">Business Intelligence</span></div></div>
+          <div class="skill-group"><strong>Professional skills</strong><div class="tags"><span class="tag">Teamwork</span><span class="tag">Leadership</span><span class="tag">Communication</span><span class="tag">Critical Thinking</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head"><span class="eyebrow">Education</span><h2 class="section-title">Academic background</h2></div>
+        <div class="grid">
+          <article class="card"><div class="meta">2022 – 2026</div><h3>BS Computer Science — Specialization in Data Science</h3><p>University of Engineering and Technology (UET), Mardan</p></article>
+          <article class="card"><div class="meta">2020 – 2022</div><h3>Intermediate (ICS)</h3><p>GSUHHSS No. 1, Charsadda</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div><span class="eyebrow">Let's connect</span><h2 class="section-title">Have a project or opportunity?</h2><p>I'm open to connecting about data science, analytics, and technology opportunities.</p><p><a class="text-link" href="mailto:abdullahaminkpk315@gmail.com">abdullahaminkpk315@gmail.com</a> · Islamabad, Pakistan</p></div>
+          <div class="actions">
+            <!-- Replace the placeholder URLs with your own profiles. -->
+            <a class="btn primary" href="mailto:abdullahaminkpk315@gmail.com">Email me</a>
+            <a class="btn" href="https://github.com/Abdullahamin-DS" target="_blank" rel="noreferrer">GitHub profile</a>
+            <a class="btn" href="https://www.linkedin.com/in/abdullah-amin-722a833b2" target="_blank" rel="noreferrer">LinkedIn profile</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container">© <span id="year">2026</span> Abdullah Amin · Built with HTML and CSS.</div></footer>
+</body>
+</html>
